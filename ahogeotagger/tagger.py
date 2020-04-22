@@ -61,6 +61,21 @@ def init(num_cities=5000):
 
 
 def search(text):
+    """
+    Searches the given string for names of cities and countries in an
+    efficient and case-insensitive manner. 
+    Arguments:
+        text: The input string for searching. It can contain location names
+            in any format such as "San Francisco, CA" or "san francisco" or
+            "california" or "United States".
+        
+    Returns:
+        List of tuples containing matching locations.
+        Each tuple has the format
+        (start_index,end_index,city,state,country,iso2,iso3,population,lat,lng)
+        where start and end_index indicate the boundaries of the match in the 
+        source string
+    """
     if(len(A) == 0):
         logging.warning(u"Tagger not initialized. \
             Initializing it with top 5000 cities.")
@@ -71,7 +86,7 @@ def search(text):
         start_index = end_index - len(key) + 1
         match = text[start_index:end_index+1]
         if _check_word_boundaries(match,text):
-            found.append([match,start_index,end_index]+record[1:])
+            found.append((match,start_index,end_index)+tuple(record[1:]))
     supersets = sorted(_remove_subsets(found),key=itemgetter(2))
     return [t[1:] for t in supersets]
 

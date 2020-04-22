@@ -1,14 +1,22 @@
-from setuptools import setup
+import setuptools
 
-setup(name='ahogeotagger',
-      version='0.1',
-      description='Uses efficient ahocorasick search to tag cities and countries in text',
-      url='http://github.com/storborg/funniest',
-      author='Yasser Bashir',
-      author_email='yasser.bashir@arbisoft.com',
-      license='MIT',
-      packages=['ahogeotagger'],
-      install_requires=[
-          'pyahocorasick',
-      ],
-      zip_safe=False)
+with open("README.md", "r") as fh:
+    long_description = fh.read()
+
+setuptools.setup(
+    name="ahogeotagger", # Replace with your own username
+    version="0.1.1",
+    author='Yasser Bashir',
+    author_email='yasser.bashir@arbisoft.com',
+    description="A small example package",
+    long_description=long_description,
+    long_description_content_type="text/markdown",
+    url="https://github.com/ybashir/ahogeotagger",
+    packages=['ahogeotagger'],
+    classifiers=[
+        "Programming Language :: Python :: 3",
+        "License :: OSI Approved :: MIT License",
+        "Operating System :: OS Independent",
+    ],
+    python_requires='>=3.6',
+)

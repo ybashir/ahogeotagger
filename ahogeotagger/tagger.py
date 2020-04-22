@@ -26,6 +26,19 @@ def _remove_subsets(input):
     return ret
 
 def init(num_cities=5000,cities=[]):
+    """
+    Initializes the ahocorasick automaton for searching of cities through text. For each
+    row representing a city, different variations of city, state and country 
+    combinations are stored as search keys. For example, San Jose, CA should 
+    match the same city as San Jose CA or San Jose California or San Jose California 
+    USA
+    Arguments:
+        num_cities: This is the upper limit to the number of cities to search through
+        The default is 5000 and the maximum limit for included cities is 15000.
+
+    Returns:
+
+    """
     global A
     if not cities:
         cities = data.cities

@@ -5,10 +5,10 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="ahogeotagger", # Replace with your own username
-    version="0.1.3",
+    version="0.1.5",
     author='Yasser Bashir',
     author_email='yasser.bashir@arbisoft.com',
-    description="Fast text search for large list of city/country names",
+    description="Rapidly search your text for large list of cities and countries",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/ybashir/ahogeotagger",

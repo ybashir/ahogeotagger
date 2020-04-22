@@ -25,9 +25,11 @@ def _remove_subsets(input):
             ret.append(s)     
     return ret
 
-def init(num_cities=5000):
+def init(num_cities=5000,cities=[]):
     global A
-    for row in data.cities[:num_cities]:
+    if not cities:
+        cities = data.cities
+    for row in cities[:num_cities]:
         #city, state, country
         c,s,k = [r.lower() for r in row[1:4]]
         keys = [

@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="ahogeotagger", # Replace with your own username
-    version="0.1.2",
+    version="0.1.3",
     author='Yasser Bashir',
     author_email='yasser.bashir@arbisoft.com',
     description="Fast text search for large list of city/country names",

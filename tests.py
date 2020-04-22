@@ -1,6 +1,5 @@
 import unittest
-import tagger
-
+from ahogeotagger import tagger
 class SearchTests(unittest.TestCase):
     def setUp(self):
         tagger.init(num_cities=10000)

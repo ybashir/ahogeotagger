@@ -1,4 +1,4 @@
-import data
+from . import data
 import ahocorasick
 import logging
 import re

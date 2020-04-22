@@ -32,7 +32,7 @@ Optionally, if you dont want to use the built-in database of cities, you can pro
 
 _(id,city,state,country,iso2,iso3,population,lat,lng)_
 
-The types for ```id``` and ```population``` are ```int```, ```lat``` and ```lng``` are floats and all the rest are strings.
+The types for ```id``` and ```population``` is ```int```, for ```lat``` and ```lng``` its ```float``` and for all the other values its ```String``.
 
 ```
 tagger.init(num_cities = 500, cities = [a,b,c])

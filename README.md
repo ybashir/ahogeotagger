@@ -16,7 +16,7 @@ pip install ahogeotagger
 
 ## Usage
 
-Right now the usage is pretty simple. You import and init the tagger with the number of cities you want to search through. The cities are in order of population (Tokyo, then New york etc.).
+Right now the usage is pretty simple. You import and init the tagger with the number of cities you want to search through. The cities are in order of population (Tokyo, then New york etc.). The data for these cities has been prepopulated from the free version of simplemaps database which you can find [here](https://simplemaps.com/data/world-cities).
 
 ```
 from aholocationtagger import tagger

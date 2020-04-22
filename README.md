@@ -19,19 +19,26 @@ pip install ahogeotagger
 
 ## Usage
 
-Right now the usage is pretty simple. You import and init the tagger with the number of cities you want to search through. The cities are in order of population (Tokyo, then New york etc.). The data for these cities has been prepopulated from the free version of simplemaps database which you can find [here](https://simplemaps.com/data/world-cities).
+Right now the usage is pretty simple. You import and init the tagger with the number of cities you want to search your text for. The cities are in order of population (Tokyo, New york, Mexico City etc.). 
+
+The data for these cities has been prepopulated from the free version of simplemaps database which you can find [here](https://simplemaps.com/data/world-cities).
 
 ```
-from aholocationtagger import tagger
+from ahogeotagger import tagger
 tagger.init(num_cities = 10000)
 ```
 
-Optionally, if you dont want to use the built-in database of cities, you can provide your own list of cities to search your text for, the list needs to be a list of tuples with each tuple's values in the following order: _id,city,state,country,iso2,iso3,population,lat,lng_
+Optionally, if you dont want to use the built-in database of cities, you can provide your own list of cities. The list needs to be a list of tuples with each tuple's values in the following order: 
+
+_(id,city,state,country,iso2,iso3,population,lat,lng)_
+
+The types for ```id``` and ```population``` are ```int```, ```lat``` and ```lng``` are floats and all the rest are strings.
 
 ```
-tagger.init(num_cities = 500, cities = [your own list])
+tagger.init(num_cities = 500, cities = [a,b,c])
 ```
 
+where a,b,c are tuples described above.
 
 To search whether text contains locations, supply any plain text to the search function like this:
 

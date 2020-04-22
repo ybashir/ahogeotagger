@@ -8,7 +8,7 @@ setuptools.setup(
     version="0.1.2",
     author='Yasser Bashir',
     author_email='yasser.bashir@arbisoft.com',
-    description="A small example package",
+    description="Fast text search for large list of city/country names",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/ybashir/ahogeotagger",

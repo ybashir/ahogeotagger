@@ -11,15 +11,15 @@ def _check_word_boundaries(string1, string2):
       return True
    return False
 
-def _remove_subsets(input):
-    sets = sorted(input,
-                key=lambda x: len(x[0]),
+def _remove_subsets(found):
+    sets = sorted(found,
+                key=lambda x: x[1]-x[0],
                 reverse=True)
     ret = []
     for s in sets:
         keep = True
         for r in ret:
-            if s[0] in r[0]:
+            if s[0] >= r[0] and s[1] <= r[1]:
                 keep = False
         if keep:
             ret.append(s)     
@@ -68,7 +68,7 @@ def init(num_cities=5000,cities=[]):
         for i,key in enumerate(keys):
             if not key in A:
                 if i == 0:
-                    A.add_word(k,(k,['','','',row[3],row[4],row[5],0,0,0]))
+                    A.add_word(k,(k,('','','',row[3],row[4],row[5],0,0,0)))
                 else:           
                     A.add_word(key,(key,row))
     A.make_automaton()
@@ -101,8 +101,8 @@ def search(text):
         start_index = end_index - len(key) + 1
         match = text[start_index:end_index+1]
         if _check_word_boundaries(match,text):
-            found.append((match,start_index,end_index)+tuple(record[1:]))
-    supersets = sorted(_remove_subsets(found),key=itemgetter(2))
-    return [t[1:] for t in supersets]
+            found.append((start_index,end_index)+tuple(record[1:]))
+    return sorted(_remove_subsets(found),key=itemgetter(0))
+    
 
 
